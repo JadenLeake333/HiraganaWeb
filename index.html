@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Practice</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/tooltip.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Glory display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="inputs">
+            <label class="inputs"  for="Combinations">Max Combinations:</label>
+            <input class="inputs" type="number" name="Combinations" min="1" id="combinations"> &nbsp
+            <a href="reference.html" target="_blank">Reference Guide</a>
+            <a href="basic.html" target="_blank" class="inputs tooltip">Basic<span class="tooltiptext">a-n Hiragana</span></a>
+            <a href="basic.html" target="_blank" class="inputs tooltip">Advanced<span class="tooltiptext">ga-pyo Hiragana</span></a>
+        </div>
+        <hr>
+        <div class="container">
+          <div class="stats">
+            <h1>Correct:</h1><h2 id='number-correct'>0</h2>
+            <h1>Incorrect:</h1><h2 id="number-incorrect">0</h2>
+            <h1>Percentage:</h1><h2 id="percentage" perfect="">100%</h2>
+            <h1>Streak:</h1><h2 id="streak">0</h2>
+          </div>
+        </div>
+        <div class="game-elements">
+            <h2 id="correct-answer"></h2>
+            <h1 id="word">&nbsp</h1>
+            <input type="text" id="answer"><br>
+            <button onclick='getCombination()'>Next</button>
+            <button onclick='checkAnswer()' id="check" disabled="">Check</button>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,85 @@
+:root {
+  font-family:  'Glory', sans-serif;
+  --clr-primary: rgba(0, 221, 255, 0.25);
+  --clr-light: white;
+  --clr-dark: black;
+}
+
+body {
+  background-color: var(--clr-primary);
+  margin: 0;
+}
+
+.container { 
+  width: 100%
+}
+
+.game-elements > *,
+.stats > *,
+.game-elements,
+.stats {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 32px;
+}
+ 
+.stats {
+  width: max-content;
+  padding: 5px;
+  background-color: var(--clr-light);
+  border: 2px black dotted;
+  border-radius: 20px;
+}
+
+.game-elements button {
+  display: inline;
+  margin: 2px;
+}
+
+/* Hiragana needs to be larger than the other text to show clearly */
+.game-elements h1 {
+  font-size: 72px;
+}
+
+@media (min-width: 550px){
+  .stats > * {
+    display: inline;
+  }
+
+  .stats {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/*Special effects*/
+
+h1[streak]{
+  background-image: linear-gradient(45deg, rgba(242,240,5,1) 16%, rgba(252,176,69,1) 44%, rgba(253,29,29,1) 80%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-size: 400%;
+  animation: streak-animation 1s infinite alternate;
+}
+
+h2[perfect]{
+  background-image: linear-gradient(45deg, rgba(223,221,26,1) 37%, rgba(255,255,255,1) 59%, rgba(223,221,26,1) 84%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-size: 400%;
+  animation: streak-animation 1.3s infinite;
+}
+
+@keyframes streak-animation{
+  0%{
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
+}
