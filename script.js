@@ -40,7 +40,7 @@ const getCombination = () =>{
         questionString += characterList[index]
         answerString += romanjiList[index]
     }
-    
+
     document.getElementById("word").innerHTML = questionString;
 }
 
@@ -113,7 +113,7 @@ const checkInputs = () =>{
         characterList = characterList.concat(katakana)
         romanjiList = romanjiList.concat(romanjiKatakana)
     }
-    if (!basic && !advanced && !katakanaCheckbox)
+    if (!basicCheckbox && !advancedCheckbox && !katakanaCheckbox)
         return [hiragana, romanji]
    
     return [characterList, romanjiList]
