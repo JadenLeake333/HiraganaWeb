@@ -1,50 +1,99 @@
-body{
+:root {
   font-family:  'Glory', sans-serif;
-  background-color: rgba(0, 221, 255, 0.25);
-  margin: 0px;
+  --clr-primary: rgba(0, 221, 255, 0.25);
+  --clr-light: white;
+  --clr-dark: black;
+  --fn-small: .5rem;
+  --fn-medium: 1.5rem;
+  --fn-large: 2.5rem;
+  --fn-xlarge: 4.5rem;
+
 }
 
-@media (min-width: 25em) {
-  div{
-      display:inline-block;
+body {
+  background-color: var(--clr-primary);
+  margin: 0;
+}
+
+.container { 
+  width: 100%;
+}
+
+.game-elements > *,
+.stats > *,
+.game-elements,
+.stats {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: var(--fn-large)
+}
+ 
+.stats {
+  width: max-content;
+  padding: 5px;
+  border: 2px black dotted;
+  border-radius: 20px;
+}
+
+.game-elements button {
+  display: inline;
+  margin: 2px;
+}
+
+.header {
+  border-bottom: 2px solid black;
+  padding: .4em;
+  margin-bottom: 5px;
+}
+
+/* Setup Classes */
+.fnt-small {
+  font-size: var(--fn-small);
+}
+
+.fnt-medium {
+  font-size: var(--fn-medium);
+}
+
+.fnt-large {
+  font-size: var(--fn-large);
+}
+
+.fnt-xlarge {
+  font-size: var(--fn-xlarge);
+}
+
+.bg-light {
+  background-color: var(--clr-light);
+}
+
+.bg-dark {
+  background-color: var(--clr-dark);
+}
+
+.bg-primary {
+  background-color: var(--clr-primary);
+}
+@media (min-width: 550px){
+  .stats > * {
+    display: inline;
+  }
+
+  .stats {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
-.stats{
-  float: left;
-  border: 3px black dotted;
-  border-radius: 15px;
-  background-color: white;
-  text-align: center;
-}
-.game-elements{
-    text-align: center;
-    font-size: 16px;
-    width: 80%;
-}
-
-.game-elements h1{
-    width: 100%;
-    font-size: 96px;
-}
-.game-elements input{
-    width: 65%;
-    font-size: 32px;
-}
-.game-elements button{
-    width: 25%;
-    font-size: 32px;
-}
-
-.get-answer{
-    font-size: 48px;
-    text-align: center
-}
+/*Special effects*/
 
 h1[streak]{
   background-image: linear-gradient(45deg, rgba(242,240,5,1) 16%, rgba(252,176,69,1) 44%, rgba(253,29,29,1) 80%);
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-size: 400%;
   animation: streak-animation 1s infinite alternate;
 }
@@ -53,6 +102,8 @@ h2[perfect]{
   background-image: linear-gradient(45deg, rgba(223,221,26,1) 37%, rgba(255,255,255,1) 59%, rgba(223,221,26,1) 84%);
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-size: 400%;
   animation: streak-animation 1.3s infinite;
 }
@@ -64,12 +115,4 @@ h2[perfect]{
   100%{
     background-position: right;
   }
-}
-
-.inputs{
-    font-size: 16px;
-}
-
-.inputs input{
-    width: 3em;
 }
